@@ -7,8 +7,8 @@ What I am trying to do here is to check and compare against each data structure,
 
 # Learning
 
-First I am testing out with using vectors:
-
+First I am testing out with using vectors:<br/>
+<br/>
 <img width="588" height="265" alt="image" src="https://github.com/user-attachments/assets/771d0da0-aa56-44e9-a8c3-f194376a210d" />  
 
 

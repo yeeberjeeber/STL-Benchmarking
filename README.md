@@ -1,4 +1,4 @@
-<img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/7bb1db7e-7013-4cd1-8476-f5f3b30aae03" /># STLBenchmarking
+<img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/408b303a-38ef-4d20-858f-345cd601bf18" /><img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/7bb1db7e-7013-4cd1-8476-f5f3b30aae03" /># STLBenchmarking
 Project designed for personal C++ systems learning
 
 # Purpose
@@ -44,5 +44,8 @@ Next, I create a struct called Big, with an array of a fixed size of 100 element
 <br/>
 Then I output the size of the struct, which gives me 800 bytes as expected, since a double element has the size of **8 bytes**.<br/>
 <img width="485" height="13" alt="image" src="https://github.com/user-attachments/assets/83002a6a-da8e-44b4-b65f-aecc4edd04dd" /><br/>
+<img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/839baeac-5103-4e30-82c3-77462662176f" /><br/>
 <br/>
-<img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/839baeac-5103-4e30-82c3-77462662176f" />
+We run the program again, this time since the size dramatically increased (by two times), it is no surprise that the program took longer to complete.<br/>
+<img width="317" height="21" alt="image" src="https://github.com/user-attachments/assets/45197bde-34ee-4b60-9fad-2e99d6643eab" /><br/>
+<br/>

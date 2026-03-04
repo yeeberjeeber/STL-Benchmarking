@@ -1,4 +1,4 @@
-<img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/408b303a-38ef-4d20-858f-345cd601bf18" /><img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/7bb1db7e-7013-4cd1-8476-f5f3b30aae03" /># STLBenchmarking
+# STL Benchmarking
 Project designed for personal C++ systems learning
 
 # Purpose

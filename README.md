@@ -49,3 +49,8 @@ Then I output the size of the struct, which gives me 800 bytes as expected, sinc
 We run the program again, this time since the size dramatically increased (by two times), it is no surprise that the program took longer to complete.<br/>
 <img width="317" height="21" alt="image" src="https://github.com/user-attachments/assets/45197bde-34ee-4b60-9fad-2e99d6643eab" /><br/>
 <br/>
+However, that was without reserve(). What if we used reserve()?<br/>
+<br/>
+Upon running again, it seems like there is a 0.01s difference:<br/>
+<img width="320" height="21" alt="image" src="https://github.com/user-attachments/assets/feba918f-0770-4f37-af65-1228fab10341" /><br/>
+<br/>

@@ -34,5 +34,5 @@ Hence when I do not use reserve():
 <img width="365" height="56" alt="image" src="https://github.com/user-attachments/assets/ff1b4eb6-c5a8-43f9-bad4-86b742605752" /><br/>
 *Commented out the reserve() line, the vector capacity starts with 0.*<br/>
 <br/>
-Up to this point, we have only tested with int types, which are 4 bytes in size.<br/>
+Up to this point, we have only tested with int types, which are **4 bytes in size**.<br/>
 So despite the vector having to repeatedly move/copy over data, it is still extremely cheap, hence only a 0.02s delay.

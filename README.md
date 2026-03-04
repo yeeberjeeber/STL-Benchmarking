@@ -1,4 +1,4 @@
-# STLBenchmarking
+<img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/7bb1db7e-7013-4cd1-8476-f5f3b30aae03" /># STLBenchmarking
 Project designed for personal C++ systems learning
 
 # Purpose
@@ -35,4 +35,14 @@ Hence when I do not use reserve():
 *Commented out the reserve() line, the vector capacity starts with 0.*<br/>
 <br/>
 Up to this point, we have only tested with int types, which are **4 bytes in size**.<br/>
-So despite the vector having to repeatedly move/copy over data, it is still extremely cheap, hence only a 0.02s delay.
+So despite the vector having to repeatedly move/copy over data, it is still extremely cheap, hence only a 0.02s delay.<br/>
+<br/>
+# Testing
+
+Next, I create a struct called Big, with an array of a fixed size of 100 elements, of the double data type:<br/>
+<img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/c5945d60-be4f-4d7f-9759-4be2ddd829e9" /><br/>
+<br/>
+Then I output the size of the struct, which gives me 800 bytes as expected, since a double element has the size of **8 bytes**.<br/>
+<img width="485" height="13" alt="image" src="https://github.com/user-attachments/assets/83002a6a-da8e-44b4-b65f-aecc4edd04dd" /><br/>
+<br/>
+<img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/839baeac-5103-4e30-82c3-77462662176f" />

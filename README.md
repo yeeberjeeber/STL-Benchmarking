@@ -8,6 +8,7 @@ What I am trying to do here is to check and compare against each data structure,
 # Learning
 
 First I am testing out with using vectors:
+
 <img width="588" height="265" alt="image" src="https://github.com/user-attachments/assets/771d0da0-aa56-44e9-a8c3-f194376a210d" />
 
 In the function above, I use reserve(). The purpose of reserve() is that it pre-allocates memory for a specified amount of elements.

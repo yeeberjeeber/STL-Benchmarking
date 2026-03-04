@@ -17,7 +17,7 @@ In the function above, I use reserve().
 The purpose of reserve() is that it pre-allocates memory for a specified amount of elements.
 When I run the project, the time taken for pushing a million elements as below:  
 
-<img width="333" height="28" alt="image" src="https://github.com/user-attachments/assets/00dd0720-f0ea-4ba1-a234-81027d6f17d1" />  
+<img width="333" height="28" alt="image" src="https://github.com/user-attachments/assets/00dd0720-f0ea-4ba1-a234-81027d6f17d1" /><br/>
 <br/>
 However when I comment out reserve(), note the timing change:  
 

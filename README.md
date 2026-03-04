@@ -30,3 +30,6 @@ Hence when I do not use reserve():
 3. Then it copies or moves all existing elements into the new block.  
 4. The old memory is freed.  
 5. Steps 1 - 4 will happen multiple times, causing extra work and hence the delay.
+<br/>
+<img width="365" height="56" alt="image" src="https://github.com/user-attachments/assets/ff1b4eb6-c5a8-43f9-bad4-86b742605752" />
+*Commented out the reserve() line, the vector capacity starts with 0.

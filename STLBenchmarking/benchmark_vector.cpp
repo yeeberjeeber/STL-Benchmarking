@@ -6,7 +6,7 @@
 using namespace std;
 
 void benchmark_vector_push(int N) {
-	vector<int> vec;
+	vector<int> vec; // capacity starts with 0
 	vec.reserve(N);
 
 	auto start = chrono::high_resolution_clock::now();

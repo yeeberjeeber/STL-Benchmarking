@@ -21,8 +21,8 @@ When I run the project, the time taken for pushing a million elements as below:
 <br/>
 However when I comment out reserve(), note the timing change:  
 
-<img width="331" height="23" alt="image" src="https://github.com/user-attachments/assets/462b1518-b5dc-4015-925e-e5a4839597dc" />  
-
+<img width="331" height="23" alt="image" src="https://github.com/user-attachments/assets/462b1518-b5dc-4015-925e-e5a4839597dc" /><br/>
+<br/>
 
 Hence when I do not use reserve():  
 1. The vector starts small.  

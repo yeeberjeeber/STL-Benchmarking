@@ -6,14 +6,12 @@
 using namespace std;
 
 void benchmark_vector_access(int N) {
-	vector<int> vec(N, 1); // capacity starts with 0
-	//vec.reserve(N);
+	vector<int> vec(N, 1);
 	volatile long long sum = 0;
 
 	auto start = chrono::high_resolution_clock::now();
 
 	for (int i = 0; i < N; i++) {
-		// vec.push_back(i);
 		int index = rand() % vec.size();
 		sum += vec[index];
 	}

@@ -15,7 +15,6 @@ void benchmark_list_access(int n) {
 	auto start = chrono::high_resolution_clock::now();
 
 	for (int i = 0; i < n; i++) {
-		//lst.push_back(n);
 		auto it = lst.begin();
 		advance(it, indices[i]);
 		sum += *it;

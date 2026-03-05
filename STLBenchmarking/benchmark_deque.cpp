@@ -10,7 +10,6 @@ void benchmark_deque_access(int n) {
 	auto start = chrono::high_resolution_clock::now();
 
 	for (int i = 0; i < n; i++) {
-		//deck.push_back(n);
 		int index = rand() % deck.size();
 		sum += deck[index];
 	}

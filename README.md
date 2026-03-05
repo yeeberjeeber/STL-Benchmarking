@@ -44,8 +44,6 @@ So despite the vector having to repeatedly move/copy over data, it is still extr
 
 Next, I created a `struct Big` with 100 doubles (800 bytes).<br/>
 <img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/c5945d60-be4f-4d7f-9759-4be2ddd829e9" /><br/>
-<br/>
-<img width="485" height="13" alt="image" src="https://github.com/user-attachments/assets/83002a6a-da8e-44b4-b65f-aecc4edd04dd" /><br/>
 <img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/839baeac-5103-4e30-82c3-77462662176f" /><br/>
 <br/>
 We run the program again, this time since the size dramatically increased (by two times), it is no surprise that the program took longer to complete.<br/>

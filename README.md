@@ -42,7 +42,7 @@ Up to this point, we have only tested with int types, which are **4 bytes in siz
 So despite the vector having to repeatedly move/copy over data, it is still extremely cheap, hence only a 0.02s delay.<br/>
 <br/>
 
-# Testing
+# Test Object Size Impact
 
 Next, I create a struct called Big, with an array of a fixed size of 100 elements, of the double data type:<br/>
 <img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/c5945d60-be4f-4d7f-9759-4be2ddd829e9" /><br/>

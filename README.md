@@ -53,7 +53,6 @@ However, that was without reserve(). What if we used reserve()? Upon running aga
 <img width="320" height="21" alt="image" src="https://github.com/user-attachments/assets/feba918f-0770-4f37-af65-1228fab10341" /><br/>
 <br/>
 **Conclusion:** <br/>
-<br/>
 - Larger objects increase the cost of copying during reallocation.<br/>
 - Using `reserve()` mitigates repeated allocations and copies.<br/>
 - The performance difference is visible but smaller than the size increase, showing the vector still benefits from contiguous memory and cache locality.<br/>

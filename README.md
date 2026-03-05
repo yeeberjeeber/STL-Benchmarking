@@ -65,9 +65,7 @@ I then compared `vector`, `deque`, and `list` for iteration and insertion perfor
 The timings of each container:<br/>
 <img width="339" height="67" alt="image" src="https://github.com/user-attachments/assets/16a00c86-07f8-475e-beb9-b378ea45a679" /><br/>
 <br/>
-Vector seems to be the fastest among the three. To understand why this is the case, we must understand each of the three:<br/>
-<br/>
-**Conclusion:** <br/>
+Vector seems to be the fastest among the three. To understand why this is the case, **we must understand each of the three:** <br/>
 - `vector` stores elements contiguously → fastest iteration due to cache locality.<br/>
 - `list` uses scattered nodes → slower due to pointer chasing and cache misses.<br/>
 - `deque` uses small contiguous blocks → iteration is faster than `list` but slightly slower than `vector` due to segmented memory layout.<br/>

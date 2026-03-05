@@ -67,6 +67,7 @@ The timings of each container:<br/>
 <img width="339" height="67" alt="image" src="https://github.com/user-attachments/assets/16a00c86-07f8-475e-beb9-b378ea45a679" /><br/>
 <br/>
 Vector seems to be the fastest among the three. To understand why this is the case, we must understand each of the three:<br/>
+<br/>
 1. A vector is a dynamic array, where it can shrink and grow based on the number of elements stored in it at runtime. It stores elements in contiguous memory, meaning that they are next to each other in memory.<br/>
 <br/>
 2. A list uses linked nodes that point to each other and is doubly linked, meaning it can go forward and backward in sequence. Its nodes are scattered in the memory, causing pointer chasing, hence the longer time that you see above.<br/>

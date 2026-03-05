@@ -76,7 +76,8 @@ Vector seems to be the fastest among the three. To understand why this is the ca
 
 # Random Access Time
 
-We measured the time it takes to perform n = 10,000 random accesses in vector, deque, and list. Each access performed a trivial sum operation to prevent the compiler from optimizing the loop away.<br/>
+We measured the time it takes to perform n = 10,000 random accesses in vector, deque, and list.<br/>
+Each access performed a trivial sum operation to prevent the compiler from optimizing the loop away.<br/>
 <img width="410" height="61" alt="image" src="https://github.com/user-attachments/assets/28255380-6099-48b1-8779-a49e7b768b1a" /><br/>
 <br/>
 As we can see from the picture above, the list is clearly inefficient when it comes to accessing random indexes, as it is built for searching in sequence (forward -> backwards or vice versa).<br/>

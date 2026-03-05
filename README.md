@@ -40,10 +40,9 @@ So despite the vector having to repeatedly move/copy over data, it is still extr
 
 # Test Object Size Impact
 
-Next, I create a struct called Big, with an array of a fixed size of 100 elements, of the double data type:<br/>
+Next, I created a `struct Big` with 100 doubles (800 bytes).<br/>
 <img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/c5945d60-be4f-4d7f-9759-4be2ddd829e9" /><br/>
 <br/>
-Then I output the size of the struct, which gives me 800 bytes as expected, since a double element has the size of **8 bytes**.<br/>
 <img width="485" height="13" alt="image" src="https://github.com/user-attachments/assets/83002a6a-da8e-44b4-b65f-aecc4edd04dd" /><br/>
 <img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/839baeac-5103-4e30-82c3-77462662176f" /><br/>
 <br/>
@@ -53,6 +52,11 @@ We run the program again, this time since the size dramatically increased (by tw
 However, that was without reserve(). What if we used reserve()? Upon running again, it seems like there is a 0.01s difference:<br/>
 <img width="320" height="21" alt="image" src="https://github.com/user-attachments/assets/feba918f-0770-4f37-af65-1228fab10341" /><br/>
 <br/>
+Conclusion:<br/>
+<br/>
+- Larger objects increase the cost of copying during reallocation.<br/>
+- Using `reserve()` mitigates repeated allocations and copies.<br/>
+- The performance difference is visible but smaller than the size increase, showing the vector still benefits from contiguous memory and cache locality.<br/>
 
 # Benchmark Sequential Containers
 

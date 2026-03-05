@@ -25,3 +25,7 @@ void benchmark_list_push(int n);
 void benchmark_deque_push(int n);
 void benchmark_map_push(int n);
 void benchmark_unorderedmap_push(int n);
+
+void benchmark_vector_access(int N);
+void benchmark_deque_access(int n);
+void benchmark_list_access(int n);

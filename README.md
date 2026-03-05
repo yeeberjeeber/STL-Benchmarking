@@ -82,5 +82,5 @@ As we can see from the picture above, the list is clearly inefficient when it co
 - deque stores elements in blocks → still O(1) access but slightly less cache-friendly<br/>
 - list is a linked list → O(n) access per element → pointer chasing → many cache misses<br/>
 <br/>
-**Conclusion:** The poor performance of list is partly due to pointer chasing: each node may live anywhere in memory, causing many cache misses. In contrast, vector benefits from contiguous memory, which keeps elements in cache lines.<br/>
+**Conclusion:** Lists are inefficient for random access due to pointer chasing and cache misses. Vectors remain optimal for this workload.<br/>
 <br/>

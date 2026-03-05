@@ -1,13 +1,16 @@
 # STL Benchmarking
-Project designed for personal C++ systems learning
+Project designed for personal C++ systems learning.<br/>
+<br/>
 
 # Purpose
 
-Investigate the performance characteristics of different C++ STL containers under common workloads such as insertion, lookup, iteration and deletion.
+Investigate the performance characteristics of different C++ STL containers under common workloads such as insertion, lookup, iteration and deletion.<br/>
+<br/>
 
 # Learning
 
-The goal is to understand how memory layout, cache locality and algorithmic complexity affect real-world performance.
+The goal is to understand how memory layout, cache locality and algorithmic complexity affect real-world performance.<br/>
+<br/>
 
 # Test Memory Allocation Behavior
 

@@ -18,5 +18,6 @@ void benchmark_vector_push(int N) {
 	auto end = chrono::high_resolution_clock::now();
 
 	chrono::duration<double> elapsed = end - start;
-	cout << "Vector push time: " << elapsed.count() << " seconds;" << endl;
+	cout << "Vector push time: " << elapsed.count() << " seconds." << endl;
 }
+

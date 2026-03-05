@@ -13,8 +13,18 @@ struct Big {
 
 int main()
 {
-    cout << "Data array size: " << sizeof(Big) << " bytes" << endl;
-    benchmark_vector_push<Big>(1000000);
+    int n = 1000000;
+
+    //cout << "Data array size: " << sizeof(Big) << " bytes" << endl;
+    benchmark_vector_push(n);
+
+    benchmark_list_push(n);
+
+    benchmark_deque_push(n);
+
+    benchmark_map_push(n);
+
+    benchmark_unorderedmap_push(n);
     return 0;
 }
 

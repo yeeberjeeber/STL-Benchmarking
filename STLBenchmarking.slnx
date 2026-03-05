@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="STLBenchmarking/STLBenchmarking.vcxproj" />
+  <Project Path="STLBenchmarking/STLBenchmarking.vcxproj" Id="5f234620-9d8e-4f86-9eb9-2b456e3d50f8" />
 </Solution>

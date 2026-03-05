@@ -52,7 +52,7 @@ We run the program again, this time since the size dramatically increased (by tw
 However, that was without reserve(). What if we used reserve()? Upon running again, it seems like there is a 0.01s difference:<br/>
 <img width="320" height="21" alt="image" src="https://github.com/user-attachments/assets/feba918f-0770-4f37-af65-1228fab10341" /><br/>
 <br/>
-Conclusion:<br/>
+**Conclusion:** <br/>
 <br/>
 - Larger objects increase the cost of copying during reallocation.<br/>
 - Using `reserve()` mitigates repeated allocations and copies.<br/>
@@ -60,7 +60,7 @@ Conclusion:<br/>
 
 # Benchmark Sequential Containers
 
-By this point we have tested mainly against vectors. Let us explore the timings on other sequential containers such as deque and list:<br/>
+I then compared `vector`, `deque`, and `list` for iteration and insertion performance.<br/>
 <img width="261" height="244" alt="image" src="https://github.com/user-attachments/assets/a29ea4e0-9f1f-49f2-bee2-a78ff3f006ba" /><br/>
 <br/>
 The timings of each container:<br/>
@@ -68,9 +68,10 @@ The timings of each container:<br/>
 <br/>
 Vector seems to be the fastest among the three. To understand why this is the case, we must understand each of the three:<br/>
 <br/>
-1. A vector is a dynamic array, where it can shrink and grow based on the number of elements stored in it at runtime. It stores elements in contiguous memory, meaning that they are next to each other in memory.<br/>
-2. A list uses linked nodes that point to each other and is doubly linked, meaning it can go forward and backward in sequence. Its nodes are scattered in the memory, causing pointer chasing, hence the longer time that you see above.<br/>
-3. A deque can insert and remove from both ends compared to the traditional queue (push from the back, pop from the front). In memory, it is a little mix of both the vector and the list, where it has chunks of contiguous memory, yet these chunks are scattered.<br/>
+**Conclusion:** <br/>
+- `vector` stores elements contiguously → fastest iteration due to cache locality.<br/>
+- `list` uses scattered nodes → slower due to pointer chasing and cache misses.<br/>
+- `deque` uses small contiguous blocks → iteration is faster than `list` but slightly slower than `vector` due to segmented memory layout.<br/>
 <br/>
 
 # Random Access time
@@ -84,5 +85,5 @@ As we can see from the picture above, the list is clearly inefficient when it co
 - deque stores elements in blocks → still O(1) access but slightly less cache-friendly<br/>
 - list is a linked list → O(n) access per element → pointer chasing → many cache misses<br/>
 <br/>
-Conclusion: The poor performance of list is partly due to pointer chasing: each node may live anywhere in memory, causing many cache misses. In contrast, vector benefits from contiguous memory, which keeps elements in cache lines.<br/>
+**Conclusion:** The poor performance of list is partly due to pointer chasing: each node may live anywhere in memory, causing many cache misses. In contrast, vector benefits from contiguous memory, which keeps elements in cache lines.<br/>
 <br/>

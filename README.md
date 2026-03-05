@@ -19,7 +19,7 @@ We first test out with using vectors:<br/>
 In the function above, I use `reserve()`.  
 
 `reserve()` pre-allocates memory for a specified amount of elements.<br/>
-When I run the project, the time taken for pushing a million elements as below:<br/>
+When I run the project, the time taken for pushing n = 1,000,000 as below:<br/>
 
 <img width="333" height="28" alt="image" src="https://github.com/user-attachments/assets/00dd0720-f0ea-4ba1-a234-81027d6f17d1" /><br/>
 <br/>

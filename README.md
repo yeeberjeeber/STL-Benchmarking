@@ -74,7 +74,7 @@ Vector seems to be the fastest among the three. To understand why this is the ca
 - `deque` uses small contiguous blocks → iteration is faster than `list` but slightly slower than `vector` due to segmented memory layout.<br/>
 <br/>
 
-# Random Access time
+# Random Access Time
 
 We measured the time it takes to perform n = 10,000 random accesses in vector, deque, and list. Each access performed a trivial sum operation to prevent the compiler from optimizing the loop away.<br/>
 <img width="410" height="61" alt="image" src="https://github.com/user-attachments/assets/28255380-6099-48b1-8779-a49e7b768b1a" /><br/>

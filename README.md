@@ -3,9 +3,13 @@ Project designed for personal C++ systems learning
 
 # Purpose
 
-What I am trying to do here is to check and compare against each data structure, to see the time / space used.
+Investigate the performance characteristics of different C++ STL containers under common workloads such as insertion, lookup, iteration and deletion.
 
 # Learning
+
+The goal is to understand how memory layout, cache locality and algorithmic complexity affect real-world performance.
+
+# Test Memory Allocation Behavior
 
 First I am testing out with using vectors:<br/>
 <br/>
@@ -37,6 +41,7 @@ Hence when I do not use reserve():
 Up to this point, we have only tested with int types, which are **4 bytes in size**.<br/>
 So despite the vector having to repeatedly move/copy over data, it is still extremely cheap, hence only a 0.02s delay.<br/>
 <br/>
+
 # Testing
 
 Next, I create a struct called Big, with an array of a fixed size of 100 elements, of the double data type:<br/>

@@ -26,7 +26,6 @@ When I run the project, the time taken for pushing n = 1,000,000 as below:<br/>
 However when I comment out `reserve()`, note the timing change:  
 
 <img width="331" height="23" alt="image" src="https://github.com/user-attachments/assets/462b1518-b5dc-4015-925e-e5a4839597dc" /><br/>
-<br/>
 
 Without `reserve()`, the vector reallocates and copies multiple times as it grows, causing extra work.<br/>
 With `reserve()`, all memory is allocated upfront, so no intermediate copying occurs, resulting in faster insertion.<br/>
@@ -56,6 +55,7 @@ However, that was without reserve(). What if we used reserve()? Upon running aga
 - Larger objects increase the cost of copying during reallocation.<br/>
 - Using `reserve()` mitigates repeated allocations and copies.<br/>
 - The performance difference is visible but smaller than the size increase, showing the vector still benefits from contiguous memory and cache locality.<br/>
+<br/>
 
 # Benchmark Sequential Containers
 

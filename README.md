@@ -72,3 +72,6 @@ Vector seems to be the fastest among the three. To understand why this is the ca
 2. A list uses linked nodes that point to each other and is doubly linked, meaning it can go forward and backward in sequence. Its nodes are scattered in the memory, causing pointer chasing, hence the longer time that you see above.<br/>
 3. A deque can insert and remove from both ends compared to the traditional queue (push from the back, pop from the front). In memory, it is a little mix of both the vector and the list, where it has chunks of contiguous memory, yet these chunks are scattered.<br/>
 <br/>
+Now what if we looped through all elements as we have already been doing, but perform a trivial sum operation on top of it?<br/>
+<img width="334" height="64" alt="image" src="https://github.com/user-attachments/assets/4b57f8bc-87bf-4422-ac7e-a90a053298b6" /><br/>
+<br/>

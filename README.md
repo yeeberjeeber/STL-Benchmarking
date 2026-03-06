@@ -137,13 +137,16 @@ This results in:<br/>
 - fewer memory jumps<br/>
 - generally better cache behavior<br/>
 <br/>
+
 Although `unordered_map` is often faster for basic operations, `map` still provides useful properties.<br/>
 - Its elements are sorted <br/>
 - It can do range queries <br/>
 - It can iterate in order <br/>
 <br/>
+
 Functions such as `lower_bound()` and `upper_bound()` make `map` useful for problems that require ordered traversal, but we will get into that another time.<br/>
 <br/>
+
 The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When n = 1000000:<br/>
 <img width="464" height="42" alt="image" src="https://github.com/user-attachments/assets/ffe5771a-97a1-4597-ac84-26fbee4c5772" /><br/>
 <br/>

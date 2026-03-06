@@ -88,3 +88,19 @@ As we can see from the picture above, the list is clearly inefficient when it co
 
 **Conclusion:** Lists are inefficient for random access due to pointer chasing and cache misses. Vectors remain optimal for this workload.<br/>
 <br/>
+
+# Associative Containers
+
+Now we will compare associative containers `map` and `unordered_map`. When inserting n = 1000000:<br/>
+<img width="390" height="41" alt="image" src="https://github.com/user-attachments/assets/cd32705d-c385-407a-87f0-1f<br/>8037ced45" /><br/>
+<br/>
+The `map` took twice as long compared to `unordered_map`.<br/>
+<br/>
+- In `map`, the elements are always sorted, so to search, find or delete an element → O(log n) time complexity.<br/>
+- However in `unordered_map`, the elements are implemented by a hash table so instead of sorting keys, it computes a hash of the key and jumps directly to a bucket in memory → O(1) time complexity.<br/>
+<br/>
+Just out of curiosity, I changed the size of n to 10000000 and see what happened:<br/>
+<img width="374" height="38" alt="image" src="https://github.com/user-attachments/assets/f3019ebb-9604-4abd-b0d5-afbd7fed8abd" /><br/>
+<br/>
+It took way longer this time.<br/>
+<br/>

@@ -1,4 +1,4 @@
-<img width="465" height="40" alt="image" src="https://github.com/user-attachments/assets/1317c781-d72d-4890-aa44-e4d1250c46a5" /># STL Benchmarking
+# STL Benchmarking
 Project designed for personal C++ systems learning.<br/>
 <br/>
 
@@ -150,7 +150,7 @@ Although `unordered_map` is often faster for basic operations, `map` still provi
 
 # Lookup performance
 
-The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When n = 1000000:<br/>
+The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When **n = 1000000**:<br/>
 <img width="464" height="42" alt="image" src="https://github.com/user-attachments/assets/ffe5771a-97a1-4597-ac84-26fbee4c5772" /><br/>
 <br/>
 The timing pattern is similar to the insertion benchmark.<br/>

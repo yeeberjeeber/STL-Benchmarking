@@ -196,5 +196,5 @@ Think of each container as a different way to organize items in real life:<br/>
 | vector |	A row of lockers numbered 0 → n-1. You can open any locker instantly if you know the number. Perfect for fast random access. But adding more lockers in the middle is costly. |	O(1) random access, O(n) insertion in middle |
 | deque |	A warehouse with sections (chunks) of lockers. You can add/remove at front or back easily. Access is still fast but jumping between sections is slightly slower than a fully contiguous row. |	O(1) random access, slight cache penalty |
 | list |	A train of connected carriages. To reach a specific carriage, you must walk through the previous ones. Great for adding/removing carriages anywhere, but slow for random access. |	O(n) random access, O(1) insert/delete given iterator |
-| map	| A dictionary on a shelf, alphabetically ordered. To find a word, you flip pages intelligently (binary search). Perfect for sorted order and range queries.	O(log n) search/insert/delete
-unordered_map	A magic dictionary where every word has a secret index number. You jump straight to the page — fast, but words are not sorted. |	O(1) average search/insert/delete |
+| map	| A dictionary on a shelf, alphabetically ordered. To find a word, you flip pages intelligently (binary search). Perfect for sorted order and range queries. | O(log n) search/insert/delete
+| unordered_map |	A magic dictionary where every word has a secret index number. You jump straight to the page — fast, but words are not sorted. | O(1) average search/insert/delete |

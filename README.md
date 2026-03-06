@@ -1,4 +1,4 @@
-# STL Benchmarking
+<img width="465" height="40" alt="image" src="https://github.com/user-attachments/assets/1317c781-d72d-4890-aa44-e4d1250c46a5" /># STL Benchmarking
 Project designed for personal C++ systems learning.<br/>
 <br/>
 
@@ -105,13 +105,28 @@ Just out of curiosity, I changed the size of n to 10000000 and see what happened
 It took way longer this time.<br/>
 <br/>
 For visual reference, this is what happens while accessing the memory in `map`: <br/>
-<br/>
+
 **node -> pointer -> pointer -> pointer** <br/>
 
 - This causes a lot of pointer chasing and hence a high chance of cache misses.<br/>
 <br/>
 And likewise this happens while accessing memory in `unordered_map`: <br/>
-<br/>
+
 **[Bucket][Bucket][Bucket][Bucket]** <br/>
 
 - Fewer pointer jumps → better cache behavior.<br/>
+<br/>
+All that being said, there is still a tradeoff:<br/>
+`map` has its own advantages as:<br/>
+- Its elements are sorted <br/>
+- It can do range queries <br/>
+- It can iterate in order <br/>
+<br/>
+There are functions such as `lower_bound()`, `upper_bound()` and `iterate in sorted order` that `map` can do, but we will get into that another time.<br/>
+<br/>
+The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When n = 1000000:<br/>
+<img width="464" height="42" alt="image" src="https://github.com/user-attachments/assets/ffe5771a-97a1-4597-ac84-26fbee4c5772" /><br/>
+<br/>
+You notice that the pattern in timing difference match the one when we did insertions.<br/>
+That is because at the core, both operations perform similar work of traversing the containers.<br/>
+<br/>

@@ -92,6 +92,7 @@ As we can see from the picture above, the list is clearly inefficient when it co
 # Associative Containers
 
 Now we compare two associative containers: `map` and `unordered_map`.<br/>
+<br/>
 Both store key → value pairs, but they are implemented using very different data structures.<br/>
 When inserting n = 1,000,000 elements:<br/>
 <img width="383" height="41" alt="image" src="https://github.com/user-attachments/assets/d95e1f12-7911-408e-92a1-b8f169ef282e" /><br/>
@@ -147,12 +148,17 @@ Although `unordered_map` is often faster for basic operations, `map` still provi
 ! Functions such as `lower_bound()` and `upper_bound()` make `map` useful for problems that require ordered traversal, but we will get into that another time.<br/>
 <br/>
 
+# Lookup performance
+
 The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When n = 1000000:<br/>
 <img width="464" height="42" alt="image" src="https://github.com/user-attachments/assets/ffe5771a-97a1-4597-ac84-26fbee4c5772" /><br/>
 <br/>
 The timing pattern is similar to the insertion benchmark.<br/>
 This is expected because both operations **require searching the underlying data structure**:<br/>
 <br/>
+
+# Deletion performance
+
 Finally, we measured the time required to **erase elements**:<br/>
 <img width="402" height="42" alt="image" src="https://github.com/user-attachments/assets/0aaddf3e-e5e5-42d6-8bc0-bc204192baf9" /><br/>
 <br/>

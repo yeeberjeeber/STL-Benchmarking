@@ -92,7 +92,8 @@ As we can see from the picture above, the list is clearly inefficient when it co
 # Associative Containers
 
 Now we will compare associative containers `map` and `unordered_map`. When inserting n = 1000000:<br/>
-<img width="390" height="41" alt="image" src="https://github.com/user-attachments/assets/cd32705d-c385-407a-87f0-1f<br/>8037ced45" /><br/>
+<img width="383" height="41" alt="image" src="https://github.com/user-attachments/assets/d95e1f12-7911-408e-92a1-b8f169ef282e" /><br/>
+<br/>
 <br/>
 The `map` took twice as long compared to `unordered_map`.<br/>
 <br/>

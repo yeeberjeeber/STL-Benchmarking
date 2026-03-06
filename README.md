@@ -144,7 +144,7 @@ Although `unordered_map` is often faster for basic operations, `map` still provi
 - It can iterate in order <br/>
 <br/>
 
-Functions such as `lower_bound()` and `upper_bound()` make `map` useful for problems that require ordered traversal, but we will get into that another time.<br/>
+! Functions such as `lower_bound()` and `upper_bound()` make `map` useful for problems that require ordered traversal, but we will get into that another time.<br/>
 <br/>
 
 The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When n = 1000000:<br/>

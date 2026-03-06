@@ -104,13 +104,13 @@ Just out of curiosity, I changed the size of n to 10000000 and see what happened
 <br/>
 It took way longer this time.<br/>
 <br/>
-For visual reference, this is what happens while accessing the memory in `map`:<br/>
+For visual reference, this is what happens while accessing the memory in `map` :<br/>
 
 **node -> pointer -> pointer -> pointer** <br/>
 
 - This causes a lot of pointer chasing and hence a high chance of cache misses.<br/>
 <br/>
-And likewise this happens while accessing memory in `unordered_map`:<br/>
+And likewise this happens while accessing memory in `unordered_map` :<br/>
 
 **[Bucket][Bucket][Bucket][Bucket]** <br/>
 

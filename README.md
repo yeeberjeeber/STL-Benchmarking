@@ -91,49 +91,70 @@ As we can see from the picture above, the list is clearly inefficient when it co
 
 # Associative Containers
 
-Now we will compare associative containers `map` and `unordered_map`. When inserting n = 1000000:<br/>
+Now we compare two associative containers: `map` and `unordered_map`.<br/>
+Both store key → value pairs, but they are implemented using very different data structures.<br/>
+When inserting n = 1,000,000 elements:<br/>
 <img width="383" height="41" alt="image" src="https://github.com/user-attachments/assets/d95e1f12-7911-408e-92a1-b8f169ef282e" /><br/>
 <br/>
 <br/>
-The `map` took twice as long compared to `unordered_map`.<br/>
-- In `map`, the elements are always sorted, so to search, find or delete an element → O(log n) time complexity.<br/>
-- However in `unordered_map`, the elements are implemented by a hash table so instead of sorting keys, it computes a hash of the key and jumps directly to a bucket in memory → O(1) time complexity.<br/>
+`map` took roughly twice as long compared to `unordered_map`.<br/>
+This difference comes from how the containers are implemented internally.<br/>
+- `map` is implemented using a **Red-Black Tree**.<br/>
+  The elements are **always kept sorted**, so lookups, insertions or deletions require traversal → **O(log n) time complexity**.<br/>
+- `unordered_map` is implemented using a **Hash Table**.<br/>
+  Instead of maintaining sorted order, it computes a hash of the key and places the element into a bucket in memory → **O(1) time complexity** for insert, lookup and erase.<br/>
 <br/>
-Just out of curiosity, I changed the size of n to 10000000 and see what happened:<br/>
+
+# Scaling the experiment
+
+To observe the scaling behaviour, I increased the dataset size to **n = 10000000**:<br/>
 <img width="374" height="38" alt="image" src="https://github.com/user-attachments/assets/f3019ebb-9604-4abd-b0d5-afbd7fed8abd" /><br/>
 <br/>
-It took way longer this time.<br/>
+The runtime increased significantly, which is expected because the containers now manage a much larger number of elements.<br/>
 <br/>
+
+# Memory access behavior
+
+The memory layout of the containers also affects performance.<br/>
 For visual reference, this is what happens while accessing the memory in `map`: <br/>
 
 **node -> pointer -> pointer -> pointer** <br/>
 
-- This causes a lot of pointer chasing and hence a high chance of cache misses.<br/>
+Each element is stored as a separate tree node containing several pointers.<br/>
+This leads to:<br/>
+- pointer chasing<br/>
+- scattered memory access<br/>
+- high probabilty of cache misses<br/>
 <br/>
 And likewise this happens while accessing memory in `unordered_map`: <br/>
 
 **[Bucket][Bucket][Bucket][Bucket]** <br/>
 
-- Fewer pointer jumps → better cache behavior.<br/>
+The hash of the key determines which bucket to access.<br/>
+This results in:<br/>
+- fewer pointer traversals<br/>
+- fewer memory jumps<br/>
+- generally better cache behavior<br/>
 <br/>
-All that being said, there is still a tradeoff:<br/>
-`map` has its own advantages as:<br/>
+Although `unordered_map` is often faster for basic operations, `map` still provides useful properties.<br/>
 - Its elements are sorted <br/>
 - It can do range queries <br/>
 - It can iterate in order <br/>
 <br/>
-There are functions such as `lower_bound()`, `upper_bound()` and `iterate in sorted order` that `map` can do, but we will get into that another time.<br/>
+Functions such as `lower_bound()` and `upper_bound()` make `map` useful for problems that require ordered traversal, but we will get into that another time.<br/>
 <br/>
 The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When n = 1000000:<br/>
 <img width="464" height="42" alt="image" src="https://github.com/user-attachments/assets/ffe5771a-97a1-4597-ac84-26fbee4c5772" /><br/>
 <br/>
-You notice that the pattern in timing difference match the one when we did insertions.<br/>
-That is because at the core, both operations perform similar work of traversing the containers.<br/>
+The timing pattern is similar to the insertion benchmark.<br/>
+This is expected because both operations **require searching the underlying data structure**:<br/>
 <br/>
-The last operation is the deletion of elements:<br/>
+Finally, we measured the time required to **erase elements**:<br/>
 <img width="402" height="42" alt="image" src="https://github.com/user-attachments/assets/0aaddf3e-e5e5-42d6-8bc0-bc204192baf9" /><br/>
 <br/>
+The results follow the same pattern as the previous benchmarks.<br/>
 The reasons are the same as the previous two operations:<br/>
 - map erase            = O(log n) tree traversal + rebalance <br/>
 - unordered_map erase  = O(1) bucket removal <br/>
+Deleting an element from `map` requires locating the node in the tree and performing potential rebalancing operations, whereas `unordered_map` typically removes the element directly from its bucket.<br/>
 <br/>

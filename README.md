@@ -138,7 +138,7 @@ This results in:<br/>
 - generally better cache behavior<br/>
 <br/>
 
-Although `unordered_map` is often faster for basic operations, `map` still provides useful properties.<br/>
+Although `unordered_map` is often faster for basic operations, `map` still provides useful properties:<br/>
 - Its elements are sorted <br/>
 - It can do range queries <br/>
 - It can iterate in order <br/>

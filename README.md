@@ -105,7 +105,6 @@ Just out of curiosity, I changed the size of n to 10000000 and see what happened
 It took way longer this time.<br/>
 <br/>
 For visual reference, this is what happens while accessing the memory in `map`:<br/>
-<br/>
 
 **node -> pointer -> pointer -> pointer** <br/>
 <br/>

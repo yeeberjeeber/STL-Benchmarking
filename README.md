@@ -88,3 +88,83 @@ As we can see from the picture above, the list is clearly inefficient when it co
 
 **Conclusion:** Lists are inefficient for random access due to pointer chasing and cache misses. Vectors remain optimal for this workload.<br/>
 <br/>
+
+# Associative Containers
+
+Now we compare two associative containers: `map` and `unordered_map`.<br/>
+<br/>
+Both store key → value pairs, but they are implemented using very different data structures.<br/>
+When inserting n = 1,000,000 elements:<br/>
+<img width="383" height="41" alt="image" src="https://github.com/user-attachments/assets/d95e1f12-7911-408e-92a1-b8f169ef282e" /><br/>
+<br/>
+<br/>
+`map` took roughly twice as long compared to `unordered_map`.<br/>
+This difference comes from how the containers are implemented internally.<br/>
+- `map` is implemented using a **Red-Black Tree**.<br/>
+  The elements are **always kept sorted**, so lookups, insertions or deletions require traversal → **O(log n) time complexity**.<br/>
+- `unordered_map` is implemented using a **Hash Table**.<br/>
+  Instead of maintaining sorted order, it computes a hash of the key and places the element into a bucket in memory → **O(1) time complexity** for insert, lookup and erase.<br/>
+<br/>
+
+# Scaling the experiment
+
+To observe the scaling behaviour, I increased the dataset size to **n = 10000000**:<br/>
+<img width="374" height="38" alt="image" src="https://github.com/user-attachments/assets/f3019ebb-9604-4abd-b0d5-afbd7fed8abd" /><br/>
+<br/>
+The runtime increased significantly, which is expected because the containers now manage a much larger number of elements.<br/>
+<br/>
+
+# Memory access behavior
+
+The memory layout of the containers also affects performance.<br/>
+For visual reference, this is what happens while accessing the memory in `map`: <br/>
+
+**node -> pointer -> pointer -> pointer** <br/>
+
+Each element is stored as a separate tree node containing several pointers.<br/>
+This leads to:<br/>
+- pointer chasing<br/>
+- scattered memory access<br/>
+- high probabilty of cache misses<br/>
+<br/>
+
+And likewise this happens while accessing memory in `unordered_map`: <br/>
+
+**[Bucket][Bucket][Bucket][Bucket]** <br/>
+
+The hash of the key determines which bucket to access.<br/>
+This results in:<br/>
+- fewer pointer traversals<br/>
+- fewer memory jumps<br/>
+- generally better cache behavior<br/>
+<br/>
+
+Although `unordered_map` is often faster for basic operations, `map` still provides useful properties:<br/>
+- Its elements are sorted <br/>
+- It can do range queries <br/>
+- It can iterate in order <br/>
+<br/>
+
+! Functions such as `lower_bound()` and `upper_bound()` make `map` useful for problems that require ordered traversal, but we will get into that another time.<br/>
+<br/>
+
+# Lookup performance
+
+The next operation we are doing is looking up a random element in both `map` and `unordered_map`. When **n = 1000000**:<br/>
+<img width="464" height="42" alt="image" src="https://github.com/user-attachments/assets/ffe5771a-97a1-4597-ac84-26fbee4c5772" /><br/>
+<br/>
+The timing pattern is similar to the insertion benchmark.<br/>
+This is expected because both operations **require searching the underlying data structure**:<br/>
+<br/>
+
+# Deletion performance
+
+Finally, we measured the time required to **erase elements**:<br/>
+<img width="402" height="42" alt="image" src="https://github.com/user-attachments/assets/0aaddf3e-e5e5-42d6-8bc0-bc204192baf9" /><br/>
+<br/>
+The results follow the same pattern as the previous benchmarks.<br/>
+The reasons are the same as the previous two operations:<br/>
+- map erase            = O(log n) tree traversal + rebalance <br/>
+- unordered_map erase  = O(1) bucket removal <br/>
+Deleting an element from `map` requires locating the node in the tree and performing potential rebalancing operations, whereas `unordered_map` typically removes the element directly from its bucket.<br/>
+<br/>

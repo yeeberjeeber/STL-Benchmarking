@@ -96,7 +96,6 @@ Now we will compare associative containers `map` and `unordered_map`. When inser
 <br/>
 <br/>
 The `map` took twice as long compared to `unordered_map`.<br/>
-<br/>
 - In `map`, the elements are always sorted, so to search, find or delete an element → O(log n) time complexity.<br/>
 - However in `unordered_map`, the elements are implemented by a hash table so instead of sorting keys, it computes a hash of the key and jumps directly to a bucket in memory → O(1) time complexity.<br/>
 <br/>

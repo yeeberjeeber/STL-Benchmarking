@@ -13,14 +13,12 @@ struct Big {
 
 int main()
 {
-    int n = 10000;
+    int n = 1000000;
 
     
-    benchmark_vector_push(n);
+    benchmark_map_erase(n);
 
-    benchmark_list_push(n);
-
-    benchmark_deque_push(n);
+    benchmark_unorderedmap_erase(n);
 
 
     return 0;

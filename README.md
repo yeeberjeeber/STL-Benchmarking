@@ -130,3 +130,10 @@ The next operation we are doing is looking up a random element in both `map` and
 You notice that the pattern in timing difference match the one when we did insertions.<br/>
 That is because at the core, both operations perform similar work of traversing the containers.<br/>
 <br/>
+The last operation is the deletion of elements:<br/>
+<img width="402" height="42" alt="image" src="https://github.com/user-attachments/assets/0aaddf3e-e5e5-42d6-8bc0-bc204192baf9" /><br/>
+<br/>
+The reasons are the same as the previous two operations:<br/>
+- map erase            = O(log n) tree traversal + rebalance <br/>
+- unordered_map erase  = O(1) bucket removal <br/>
+<br/>

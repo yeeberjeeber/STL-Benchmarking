@@ -169,3 +169,32 @@ The reasons are the same as the previous two operations:<br/>
 - unordered_map erase  = O(1) bucket removal <br/>
 Deleting an element from `map` requires locating the node in the tree and performing potential rebalancing operations, whereas `unordered_map` typically removes the element directly from its bucket.<br/>
 <br/>
+
+# Key Takeaways
+
+Cache locality describes how well a program uses data that is already in the CPU cache.<br/>
+<br/>
+There are two main types:<br/>
+1. Temporal locality<br/>
+    - If you access the same memory location repeatedly, it’s likely still in the cache.<br/>
+2. Spatial locality<br/>
+    - If you access memory locations that are near each other, the CPU can fetch multiple nearby elements in one cache line.<br/>
+<br/>
+
+Cache misses happen when the CPU tries to access data not currently in the cache.<br/>
+- CPU must fetch the data from slower memory (L2/L3/RAM).<br/>
+- This introduces latency (many CPU cycles).<br/>
+<br/>
+
+# STL Containers Analogy
+
+Think of each container as a different way to organize items in real life:<br/>
+<br/>
+
+| Container |	Analogy	| Access / Operations |
+|-----------|---------|---------------------|
+| vector |	A row of lockers numbered 0 → n-1. You can open any locker instantly if you know the number. Perfect for fast random access. But adding more lockers in the middle is costly. |	O(1) random access, O(n) insertion in middle |
+| deque |	A warehouse with sections (chunks) of lockers. You can add/remove at front or back easily. Access is still fast but jumping between sections is slightly slower than a fully contiguous row. |	O(1) random access, slight cache penalty |
+| list |	A train of connected carriages. To reach a specific carriage, you must walk through the previous ones. Great for adding/removing carriages anywhere, but slow for random access. |	O(n) random access, O(1) insert/delete given iterator |
+| map	| A dictionary on a shelf, alphabetically ordered. To find a word, you flip pages intelligently (binary search). Perfect for sorted order and range queries.	O(log n) search/insert/delete
+unordered_map	A magic dictionary where every word has a secret index number. You jump straight to the page — fast, but words are not sorted. |	O(1) average search/insert/delete |

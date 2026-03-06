@@ -46,10 +46,11 @@ Next, I created a `struct Big` with 100 doubles (800 bytes).<br/>
 <img width="169" height="73" alt="image" src="https://github.com/user-attachments/assets/c5945d60-be4f-4d7f-9759-4be2ddd829e9" /><br/>
 <img width="244" height="26" alt="image" src="https://github.com/user-attachments/assets/839baeac-5103-4e30-82c3-77462662176f" /><br/>
 <br/>
-We run the program again, this time since the size dramatically increased (by two times), it is no surprise that the program took longer to complete.<br/>
+We run the program again, this time since the size dramatically increased (**by two times**), it is no surprise that the program took longer to complete.<br/>
 <img width="317" height="21" alt="image" src="https://github.com/user-attachments/assets/45197bde-34ee-4b60-9fad-2e99d6643eab" /><br/>
 <br/>
-However, that was without reserve(). What if we used reserve()? Upon running again, it seems like there is a 0.01s difference:<br/>
+
+However, that was without `reserve()`. What if we used `reserve()`? Upon running again, it seems like there is a 0.01s difference:<br/>
 <img width="320" height="21" alt="image" src="https://github.com/user-attachments/assets/feba918f-0770-4f37-af65-1228fab10341" /><br/>
 <br/>
 **Conclusion:** <br/>
@@ -74,7 +75,7 @@ Vector seems to be the fastest among the three. To understand why this is the ca
 
 # Random Access Time
 
-We measured the time it takes to perform n = 10,000 random accesses in vector, deque, and list.<br/>
+We measured the time it takes to perform **n = 10,000 random accesses** in `vector`, `deque`, and `list`.<br/>
 Each access performed a trivial sum operation to prevent the compiler from optimizing the loop away.<br/>
 <br/>
 <img width="410" height="61" alt="image" src="https://github.com/user-attachments/assets/28255380-6099-48b1-8779-a49e7b768b1a" /><br/>
